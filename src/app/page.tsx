@@ -3,6 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeader from "@/components/SectionHeader";
 import FeatureCard from "@/components/FeatureCard";
 import CaseCard from "@/components/CaseCard";
+import TestimonialCard from "@/components/TestimonialCard";
 import CtaBand from "@/components/CtaBand";
 
 const cases = [
@@ -147,6 +148,44 @@ export default function Home() {
             >
               Ver todas as realizações →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Depoimentos */}
+      <section className="bg-mist py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionHeader
+              eyebrow="O que dizem nossos clientes"
+              title="Quem confia na A&B recomenda"
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <ScrollReveal>
+              <TestimonialCard
+                quote="Trabalho excelente e de alta qualidade. As novas oportunidades identificadas foram cruciais para a expansão da empresa."
+                author="Granvia Engenharia"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <TestimonialCard
+                quote="Agradeço o atendimento diferenciado e o maravilhoso trabalho! Não imaginava que um pequeno empreendedor como eu tinha tanto espaço para crescer. Vocês fizeram a diferença no meu negócio!"
+                author="MeM Açaí e Sorveteria"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <TestimonialCard
+                quote="Equipe eficiente e comprometida, entregou tudo dentro do prazo e superou as expectativas."
+                author="Associação Empresarial de São Miguel do Oeste — ACISMO"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <TestimonialCard
+                quote="Apresentamos desafios e vocês entregaram soluções. Muito obrigado!!!"
+                author="GAIA — Engenharia e Treinamentos"
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

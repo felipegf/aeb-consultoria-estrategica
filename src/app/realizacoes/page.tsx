@@ -45,6 +45,27 @@ const cases = [
     descricao:
       "Estruturação de painéis de indicadores socioeconômicos para dois municípios, permitindo monitoramento contínuo e embasamento de decisões.",
   },
+  {
+    local: "Ibirité, MG",
+    cliente: "Pequeno Empreendedor — Ramo de Açaí",
+    titulo: "Mapa de Oportunidades de Negócios",
+    descricao:
+      "Estudo estratégico para identificar oportunidades de mercado no segmento de açaí, mapeando potencial de consumo e ambiente competitivo local.",
+  },
+  {
+    local: "Belo Horizonte, MG",
+    cliente: "Granvia Engenharia",
+    titulo: "Estudo de Ambiente de Negócios",
+    descricao:
+      "Análise do ambiente econômico e competitivo para subsidiar decisões estratégicas da empresa no mercado de engenharia.",
+  },
+  {
+    local: "Barroso, MG",
+    cliente: "GAIA Engenharia e Treinamentos",
+    titulo: "Análise de Viabilidade Econômica",
+    descricao:
+      "Avaliação técnica de viabilidade para orientar decisões de investimento, reduzindo riscos e otimizando recursos.",
+  },
 ];
 
 export default function Realizacoes() {

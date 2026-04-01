@@ -1,27 +1,40 @@
+import { ReactNode } from "react";
+
 export default function ProfileCard({
   nome,
   credencial,
   bio,
   especialidade,
+  initials,
+  icon,
+  gradientFrom = "from-sky",
+  gradientTo = "to-blue",
   borderColor = "border-sky",
 }: {
   nome: string;
   credencial: string;
   bio: string;
   especialidade: string;
+  initials: string;
+  icon: ReactNode;
+  gradientFrom?: string;
+  gradientTo?: string;
   borderColor?: string;
 }) {
   return (
     <div className={`bg-white rounded-2xl p-8 border-t-4 ${borderColor} shadow-sm`}>
-      {/* Placeholder foto */}
-      <div className="w-24 h-24 rounded-full bg-mist flex items-center justify-center mx-auto mb-6">
-        <svg className="w-10 h-10 text-sub/40" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-            clipRule="evenodd"
-          />
-        </svg>
+      {/* Avatar: iniciais + ícone */}
+      <div className="relative w-28 h-28 mx-auto mb-6">
+        <div
+          className={`w-28 h-28 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center shadow-lg`}
+        >
+          <span className="text-3xl font-bold text-white tracking-wide">
+            {initials}
+          </span>
+        </div>
+        <div className="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
+          {icon}
+        </div>
       </div>
       <h3 className="text-xl font-bold text-navy text-center mb-1">{nome}</h3>
       <p className="text-xs text-sub text-center mb-4">{credencial}</p>
