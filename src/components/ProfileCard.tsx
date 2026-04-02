@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 
 export default function ProfileCard({
   nome,
@@ -6,6 +7,7 @@ export default function ProfileCard({
   bio,
   especialidade,
   initials,
+  avatar,
   icon,
   gradientFrom = "from-sky",
   gradientTo = "to-blue",
@@ -16,6 +18,7 @@ export default function ProfileCard({
   bio: string;
   especialidade: string;
   initials: string;
+  avatar?: string;
   icon: ReactNode;
   gradientFrom?: string;
   gradientTo?: string;
@@ -23,15 +26,25 @@ export default function ProfileCard({
 }) {
   return (
     <div className={`bg-white rounded-2xl p-8 border-t-4 ${borderColor} shadow-sm`}>
-      {/* Avatar: iniciais + ícone */}
-      <div className="relative w-28 h-28 mx-auto mb-6">
-        <div
-          className={`w-28 h-28 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center shadow-lg`}
-        >
-          <span className="text-3xl font-bold text-white tracking-wide">
-            {initials}
-          </span>
-        </div>
+      {/* Avatar */}
+      <div className="relative w-36 h-36 mx-auto mb-6">
+        {avatar ? (
+          <Image
+            src={avatar}
+            alt={nome}
+            width={144}
+            height={144}
+            className="w-36 h-36 rounded-full object-cover shadow-lg"
+          />
+        ) : (
+          <div
+            className={`w-36 h-36 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center shadow-lg`}
+          >
+            <span className="text-3xl font-bold text-white tracking-wide">
+              {initials}
+            </span>
+          </div>
+        )}
         <div className="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
           {icon}
         </div>
