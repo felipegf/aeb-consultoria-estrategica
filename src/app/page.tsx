@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeader from "@/components/SectionHeader";
@@ -5,6 +6,15 @@ import FeatureCard from "@/components/FeatureCard";
 import CaseCard from "@/components/CaseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CtaBand from "@/components/CtaBand";
+
+export const metadata: Metadata = {
+  title: "A&B Consultoria Estratégica",
+  description:
+    "Consultoria econômica especializada em diagnósticos socioeconômicos, estudos setoriais e inteligência estratégica para governos e empresas.",
+  alternates: {
+    canonical: "https://abconsultoriaestrategica.com.br",
+  },
+};
 
 const cases = [
   {
@@ -45,9 +55,93 @@ const checkItems = [
   "Orientar investimentos com maior segurança e eficiência",
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://abconsultoriaestrategica.com.br/#organization",
+      name: "A&B Consultoria Estratégica",
+      url: "https://abconsultoriaestrategica.com.br",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://abconsultoriaestrategica.com.br/favicon.ico",
+      },
+      description:
+        "Consultoria econômica especializada em diagnósticos socioeconômicos, estudos setoriais e inteligência estratégica para governos e empresas.",
+      email: "abconsultoriaestrategica@gmail.com",
+      telephone: "+55-31-98290-5259",
+      areaServed: "BR",
+      sameAs: [],
+      founder: [
+        {
+          "@type": "Person",
+          name: "Alessandra Angelini Gerhardt",
+          jobTitle: "Economista",
+        },
+        {
+          "@type": "Person",
+          name: "Andréa Barbosa",
+          jobTitle: "Gestora da Informação",
+        },
+      ],
+      serviceType: [
+        "Diagnóstico Socioeconômico Municipal",
+        "Observatório Econômico",
+        "Mapa de Oportunidades de Negócios",
+        "Planejamento Estratégico",
+        "Análise de Viabilidade Econômica",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://abconsultoriaestrategica.com.br/#website",
+      url: "https://abconsultoriaestrategica.com.br",
+      name: "A&B Consultoria Estratégica",
+      publisher: {
+        "@id": "https://abconsultoriaestrategica.com.br/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate:
+            "https://abconsultoriaestrategica.com.br/?s={search_term_string}",
+        },
+        "query-input": {
+          "@type": "PropertyValueSpecification",
+          valueRequired: true,
+          valueName: "search_term_string",
+        },
+      },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://abconsultoriaestrategica.com.br/#webpage",
+      url: "https://abconsultoriaestrategica.com.br",
+      name: "A&B Consultoria Estratégica",
+      isPartOf: {
+        "@id": "https://abconsultoriaestrategica.com.br/#website",
+      },
+      about: {
+        "@id": "https://abconsultoriaestrategica.com.br/#organization",
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: "https://abconsultoriaestrategica.com.br/og-image.png",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-navy to-blue min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">

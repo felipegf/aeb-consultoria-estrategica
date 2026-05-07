@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+interface ContatoData {
+  nome: string;
+  email: string;
+  telefone: string;
+  instituicao?: string;
+  segmento?: string;
+  mensagem: string;
+}
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json();
+    const data: ContatoData = await request.json();
 
     const { nome, email, telefone, mensagem } = data;
     if (!nome || !email || !telefone || !mensagem) {
@@ -12,23 +22,30 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Integrar com Resend para envio de e-mail
-    // Exemplo:
-    // import { Resend } from 'resend';
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'site@aebconsultoria.com.br',
-    //   to: 'abconsultoriaestrategica@gmail.com',
-    //   subject: `Novo contato: ${nome}`,
-    //   html: `<p><strong>Nome:</strong> ${nome}</p>
-    //          <p><strong>E-mail:</strong> ${email}</p>
-    //          <p><strong>Telefone:</strong> ${telefone}</p>
-    //          <p><strong>Instituição:</strong> ${data.instituicao || '-'}</p>
-    //          <p><strong>Segmento:</strong> ${data.segmento || '-'}</p>
-    //          <p><strong>Mensagem:</strong> ${mensagem}</p>`,
-    // });
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.CONTACT_EMAIL ?? "abconsultoriaestrategica@gmail.com",
+        pass: process.env.GMAIL_APP_PASSWORD ?? "",
+      },
+    });
 
-    console.log("Contato recebido:", data);
+    const mailOptions = {
+      from: `"A&B Consultoria" <${process.env.CONTACT_EMAIL ?? "abconsultoriaestrategica@gmail.com"}>`,
+      to: process.env.CONTACT_EMAIL ?? "abconsultoriaestrategica@gmail.com",
+      replyTo: email,
+      subject: `Novo contato via site: ${nome}`,
+      html: `<p><strong>Nome:</strong> ${nome}</p>
+             <p><strong>E-mail:</strong> ${email}</p>
+             <p><strong>Telefone:</strong> ${telefone}</p>
+             <p><strong>Instituição:</strong> ${data.instituicao || "-"}</p>
+             <p><strong>Segmento:</strong> ${data.segmento || "-"}</p>
+             <p><strong>Mensagem:</strong> ${mensagem}</p>`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true });
   } catch {

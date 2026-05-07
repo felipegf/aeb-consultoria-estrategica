@@ -6,9 +6,31 @@ import IcpTags from "@/components/IcpTags";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Serviços · A&B Consultoria",
+  title: "Serviços",
   description:
     "Diagnóstico socioeconômico municipal, observatório econômico, mapa de oportunidades e muito mais.",
+  alternates: {
+    canonical: "https://abconsultoriaestrategica.com.br/servicos",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://abconsultoriaestrategica.com.br",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Serviços",
+      item: "https://abconsultoriaestrategica.com.br/servicos",
+    },
+  ],
 };
 
 function GovernosContent() {
@@ -153,6 +175,11 @@ function CtaInline() {
 export default function Servicos() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Introdução */}
       <section className="pt-32 pb-10 bg-mist">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

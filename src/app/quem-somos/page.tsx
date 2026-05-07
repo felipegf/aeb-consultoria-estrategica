@@ -4,14 +4,41 @@ import ProfileCard from "@/components/ProfileCard";
 import StatCard from "@/components/StatCard";
 
 export const metadata: Metadata = {
-  title: "Quem Somos · A&B Consultoria",
+  title: "Quem Somos",
   description:
     "Conheça as consultoras da A&B: mais de 30 anos de experiência em análise econômica e gestão da informação.",
+  alternates: {
+    canonical: "https://abconsultoriaestrategica.com.br/quem-somos",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://abconsultoriaestrategica.com.br",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Quem Somos",
+      item: "https://abconsultoriaestrategica.com.br/quem-somos",
+    },
+  ],
 };
 
 export default function QuemSomos() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Abertura */}
       <section className="pt-32 pb-20 bg-mist">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

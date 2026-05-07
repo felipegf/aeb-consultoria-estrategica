@@ -3,14 +3,41 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Fale Conosco · A&B Consultoria",
+  title: "Fale Conosco",
   description:
     "Entre em contato com a A&B Consultoria Estratégica. Retorno em até 24 horas úteis.",
+  alternates: {
+    canonical: "https://abconsultoriaestrategica.com.br/contato",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://abconsultoriaestrategica.com.br",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Fale Conosco",
+      item: "https://abconsultoriaestrategica.com.br/contato",
+    },
+  ],
 };
 
 export default function Contato() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

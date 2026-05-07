@@ -4,9 +4,31 @@ import CaseCard from "@/components/CaseCard";
 import CtaBand from "@/components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Realizações · A&B Consultoria",
+  title: "Realizações",
   description:
     "Cases reais: Observatório da ACISMO, Mapa do Emprego de Contagem, Painel de Indicadores e mais.",
+  alternates: {
+    canonical: "https://abconsultoriaestrategica.com.br/realizacoes",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://abconsultoriaestrategica.com.br",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Realizações",
+      item: "https://abconsultoriaestrategica.com.br/realizacoes",
+    },
+  ],
 };
 
 const cases = [
@@ -71,6 +93,11 @@ const cases = [
 export default function Realizacoes() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="pt-32 pb-10 bg-mist">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
