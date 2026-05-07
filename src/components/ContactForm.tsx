@@ -12,14 +12,39 @@ interface FormData {
   mensagem: string;
 }
 
+function maskPhone(value: string): string {
+  const raw = value.replace(/\D/g, "").slice(0, 11);
+  if (raw.length > 10) {
+    return raw.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+  }
+  if (raw.length > 6) {
+    return raw.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+  }
+  if (raw.length > 2) {
+    return raw.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+  }
+  return raw.length > 0 ? `(${raw}` : raw;
+}
+
 export default function ContactForm() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>();
+  const { register, handleSubmit, reset, setValue, formState: { errors, isSubmitting } } = useForm({
+    defaultValues: {
+      nome: "",
+      email: "",
+      telefone: "",
+      instituicao: "",
+      segmento: "",
+      mensagem: "",
+    },
+  });
   const [submitted, setSubmitted] = useState(false);
+  const [phoneDisplay, setPhoneDisplay] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const masked = maskPhone(e.target.value);
+    setPhoneDisplay(masked);
+    setValue("telefone", masked, { shouldValidate: true });
+  };
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -30,6 +55,7 @@ export default function ContactForm() {
       });
       if (res.ok) {
         setSubmitted(true);
+        setPhoneDisplay("");
         reset();
       }
     } catch {
@@ -91,7 +117,8 @@ export default function ContactForm() {
         </label>
         <input
           type="tel"
-          {...register("telefone", { required: "Campo obrigatório" })}
+          value={phoneDisplay}
+          onChange={handlePhoneChange}
           placeholder="(00) 00000-0000"
           className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-text focus:outline-none focus:ring-2 focus:ring-sky/50 focus:border-sky"
         />
@@ -153,7 +180,7 @@ export default function ContactForm() {
       {/* LGPD */}
       <p className="text-xs text-sub leading-relaxed">
         Ao enviar este formulário, você concorda com o tratamento dos seus dados
-        pessoais pela A&B Consultoria Estratégica, conforme a Lei Geral de
+        pessoais pela A&amp;B Consultoria Estratégica, conforme a Lei Geral de
         Proteção de Dados (Lei nº 13.709/2018). Seus dados serão utilizados
         exclusivamente para responder à sua solicitação e não serão
         compartilhados com terceiros. Para exercer seus direitos de acesso,
