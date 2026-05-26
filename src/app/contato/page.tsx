@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Entre em contato com a A&B Consultoria Estratégica. Retorno em até 24 horas úteis.",
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br/contato",
+    canonical: "https://www.abconsultoriaestrategica.com.br/contato",
   },
 };
 
@@ -19,13 +19,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://abconsultoriaestrategica.com.br",
+      item: "https://www.abconsultoriaestrategica.com.br",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Fale Conosco",
-      item: "https://abconsultoriaestrategica.com.br/contato",
+      item: "https://www.abconsultoriaestrategica.com.br/contato",
     },
   ],
 };

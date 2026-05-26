@@ -8,11 +8,11 @@ import TestimonialCard from "@/components/TestimonialCard";
 import CtaBand from "@/components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "A&B Consultoria Estratégica",
+  title: "A&B Consultoria Estratégica | Consultoria Econômica",
   description:
     "Consultoria econômica especializada em diagnósticos socioeconômicos, estudos setoriais e inteligência estratégica para governos e empresas.",
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br",
+    canonical: "https://www.abconsultoriaestrategica.com.br",
   },
 };
 
@@ -60,12 +60,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://abconsultoriaestrategica.com.br/#organization",
+      "@id": "https://www.abconsultoriaestrategica.com.br/#organization",
       name: "A&B Consultoria Estratégica",
-      url: "https://abconsultoriaestrategica.com.br",
+      url: "https://www.abconsultoriaestrategica.com.br",
       logo: {
         "@type": "ImageObject",
-        url: "https://abconsultoriaestrategica.com.br/favicon.ico",
+        url: "https://www.abconsultoriaestrategica.com.br/logo.png",
+        width: 512,
+        height: 512,
       },
       description:
         "Consultoria econômica especializada em diagnósticos socioeconômicos, estudos setoriais e inteligência estratégica para governos e empresas.",
@@ -95,18 +97,18 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://abconsultoriaestrategica.com.br/#website",
-      url: "https://abconsultoriaestrategica.com.br",
+      "@id": "https://www.abconsultoriaestrategica.com.br/#website",
+      url: "https://www.abconsultoriaestrategica.com.br",
       name: "A&B Consultoria Estratégica",
       publisher: {
-        "@id": "https://abconsultoriaestrategica.com.br/#organization",
+        "@id": "https://www.abconsultoriaestrategica.com.br/#organization",
       },
       potentialAction: {
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
           urlTemplate:
-            "https://abconsultoriaestrategica.com.br/?s={search_term_string}",
+            "https://www.abconsultoriaestrategica.com.br/?s={search_term_string}",
         },
         "query-input": {
           "@type": "PropertyValueSpecification",
@@ -117,18 +119,18 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": "https://abconsultoriaestrategica.com.br/#webpage",
-      url: "https://abconsultoriaestrategica.com.br",
+      "@id": "https://www.abconsultoriaestrategica.com.br/#webpage",
+      url: "https://www.abconsultoriaestrategica.com.br",
       name: "A&B Consultoria Estratégica",
       isPartOf: {
-        "@id": "https://abconsultoriaestrategica.com.br/#website",
+        "@id": "https://www.abconsultoriaestrategica.com.br/#website",
       },
       about: {
-        "@id": "https://abconsultoriaestrategica.com.br/#organization",
+        "@id": "https://www.abconsultoriaestrategica.com.br/#organization",
       },
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: "https://abconsultoriaestrategica.com.br/og-image.png",
+        url: "https://www.abconsultoriaestrategica.com.br/og-image.png",
       },
     },
   ],

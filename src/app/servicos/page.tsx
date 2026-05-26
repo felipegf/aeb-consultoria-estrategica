@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Diagnóstico socioeconômico municipal, observatório econômico, mapa de oportunidades e muito mais.",
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br/servicos",
+    canonical: "https://www.abconsultoriaestrategica.com.br/servicos",
   },
 };
 
@@ -22,13 +22,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://abconsultoriaestrategica.com.br",
+      item: "https://www.abconsultoriaestrategica.com.br",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Serviços",
-      item: "https://abconsultoriaestrategica.com.br/servicos",
+      item: "https://www.abconsultoriaestrategica.com.br/servicos",
     },
   ],
 };

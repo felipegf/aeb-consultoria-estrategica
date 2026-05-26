@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Cases reais: Observatório da ACISMO, Mapa do Emprego de Contagem, Painel de Indicadores e mais.",
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br/realizacoes",
+    canonical: "https://www.abconsultoriaestrategica.com.br/realizacoes",
   },
 };
 
@@ -20,13 +20,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://abconsultoriaestrategica.com.br",
+      item: "https://www.abconsultoriaestrategica.com.br",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Realizações",
-      item: "https://abconsultoriaestrategica.com.br/realizacoes",
+      item: "https://www.abconsultoriaestrategica.com.br/realizacoes",
     },
   ],
 };

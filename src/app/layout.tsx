@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abconsultoriaestrategica.com.br"),
+  metadataBase: new URL("https://www.abconsultoriaestrategica.com.br"),
   title: {
-    default: "A&B Consultoria Estratégica",
+    default: "A&B Consultoria Estratégica | Consultoria Econômica",
     template: "%s · A&B Consultoria",
   },
   description:
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br",
+    canonical: "https://www.abconsultoriaestrategica.com.br",
   },
 };
 

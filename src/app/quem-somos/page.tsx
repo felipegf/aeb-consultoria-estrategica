@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Conheça as consultoras da A&B: mais de 30 anos de experiência em análise econômica e gestão da informação.",
   alternates: {
-    canonical: "https://abconsultoriaestrategica.com.br/quem-somos",
+    canonical: "https://www.abconsultoriaestrategica.com.br/quem-somos",
   },
 };
 
@@ -20,13 +20,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://abconsultoriaestrategica.com.br",
+      item: "https://www.abconsultoriaestrategica.com.br",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Quem Somos",
-      item: "https://abconsultoriaestrategica.com.br/quem-somos",
+      item: "https://www.abconsultoriaestrategica.com.br/quem-somos",
     },
   ],
 };
