@@ -4,11 +4,20 @@ import { getSegment } from "../segments";
 
 const segment = getSegment("gestor-publico")!;
 
+const url = `https://www.abconsultoriaestrategica.com.br/solucoes/${segment.slug}`;
+
 export const metadata: Metadata = {
   title: `Soluções para ${segment.label}`,
   description: segment.metaDescription,
-  alternates: {
-    canonical: `https://www.abconsultoriaestrategica.com.br/solucoes/${segment.slug}`,
+  alternates: { canonical: url },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "A&B Consultoria Estratégica",
+    title: `Soluções para ${segment.label} · A&B Consultoria`,
+    description: segment.metaDescription,
+    url,
+    images: ["/og-image.png"],
   },
 };
 

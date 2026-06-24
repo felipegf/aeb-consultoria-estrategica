@@ -6,4 +6,7 @@ module.exports = {
   changefreq: 'monthly',
   priority: 0.7,
   exclude: ['/icon.png', '/apple-icon.png'],
+  robotsTxtOptions: {
+    policies: [{ userAgent: '*', allow: '/', disallow: '/materiais/' }],
+  },
 };

@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.abconsultoriaestrategica.com.br/solucoes",
   },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "A&B Consultoria Estratégica",
+    title: "Para quem atendemos · A&B Consultoria",
+    description:
+      "Inteligência estratégica sob medida para Gestor Público, Agente Político e Empreendedor. Dados públicos transformados em decisão.",
+    url: "https://www.abconsultoriaestrategica.com.br/solucoes",
+    images: ["/og-image.png"],
+  },
 };
 
 const jsonLd = {

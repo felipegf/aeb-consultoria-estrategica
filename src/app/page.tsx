@@ -6,6 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import CaseCard from "@/components/CaseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CtaBand from "@/components/CtaBand";
+import { segments } from "@/app/solucoes/segments";
 
 export const metadata: Metadata = {
   title: "A&B Consultoria Estratégica | Consultoria Econômica",
@@ -217,6 +218,44 @@ export default function Home() {
                 description="Dados transformados em conhecimento útil para decisões concretas e investimentos seguros."
               />
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Para quem atendemos */}
+      <section className="bg-offwhite py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionHeader
+              eyebrow="Para quem trabalhamos"
+              title="Inteligência sob medida para o seu perfil"
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {segments.map((s, i) => (
+              <ScrollReveal key={s.slug} delay={i * 0.1}>
+                <Link
+                  href={`/solucoes/${s.slug}`}
+                  className="group block bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow h-full"
+                >
+                  <div className={`h-1.5 ${s.accent.bg}`} />
+                  <div className="p-8 flex flex-col h-full">
+                    <span className="text-3xl mb-4">{s.emoji}</span>
+                    <h3 className="text-xl font-bold text-navy mb-3">
+                      {s.label}
+                    </h3>
+                    <p className="text-sm text-sub leading-relaxed mb-6">
+                      {s.cardDescription}
+                    </p>
+                    <span
+                      className={`mt-auto text-sm font-semibold ${s.accent.text} group-hover:underline`}
+                    >
+                      Ver soluções →
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
