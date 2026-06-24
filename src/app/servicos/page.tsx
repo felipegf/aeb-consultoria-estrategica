@@ -191,6 +191,15 @@ export default function Servicos() {
               Não entregamos apenas relatórios — estruturamos o caminho para o
               crescimento do seu município, empresa ou instituição.
             </p>
+            <p className="mt-4 text-sm text-sub">
+              Prefere ver por perfil?{" "}
+              <Link
+                href="/solucoes"
+                className="text-blue font-semibold hover:underline"
+              >
+                Veja para quem atendemos →
+              </Link>
+            </p>
           </ScrollReveal>
         </div>
       </section>

@@ -13,6 +13,7 @@ const config: Config = {
         blue: "#1A5FA8",
         sky: "#2E86AB",
         teal: "#1B998B",
+        purple: "#6B46C1",
         offwhite: "#F8FAFB",
         mist: "#F0F7FF",
         text: "#2C3E50",
