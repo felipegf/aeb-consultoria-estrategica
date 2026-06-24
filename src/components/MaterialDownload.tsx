@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import type { Segment } from "@/app/solucoes/segments";
+import type { Segment } from "@/app/para-quem-atendemos/segments";
 
 interface FormData {
   nome: string;

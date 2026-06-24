@@ -6,7 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import CaseCard from "@/components/CaseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CtaBand from "@/components/CtaBand";
-import { segments } from "@/app/solucoes/segments";
+import { segments } from "@/app/para-quem-atendemos/segments";
 
 export const metadata: Metadata = {
   title: "A&B Consultoria Estratégica | Consultoria Econômica",
@@ -235,7 +235,7 @@ export default function Home() {
             {segments.map((s, i) => (
               <ScrollReveal key={s.slug} delay={i * 0.1}>
                 <Link
-                  href={`/solucoes/${s.slug}`}
+                  href={`/para-quem-atendemos/${s.slug}`}
                   className="group block bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow h-full"
                 >
                   <div className={`h-1.5 ${s.accent.bg}`} />

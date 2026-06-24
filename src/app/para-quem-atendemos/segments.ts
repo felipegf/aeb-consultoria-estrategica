@@ -31,7 +31,7 @@ export type Segment = {
   titlePre: string;
   titleHighlight: string;
   intro: string;
-  /** descrição curta usada no card do índice /solucoes */
+  /** descrição curta usada no card do índice /para-quem-atendemos */
   cardDescription: string;
   stats: Stat[];
   insightsTitle: string;

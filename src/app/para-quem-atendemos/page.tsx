@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Inteligência estratégica sob medida para Gestor Público, Agente Político e Empreendedor. Dados públicos transformados em decisão.",
   alternates: {
-    canonical: "https://www.abconsultoriaestrategica.com.br/solucoes",
+    canonical: "https://www.abconsultoriaestrategica.com.br/para-quem-atendemos",
   },
   openGraph: {
     type: "website",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Para quem atendemos · A&B Consultoria",
     description:
       "Inteligência estratégica sob medida para Gestor Público, Agente Político e Empreendedor. Dados públicos transformados em decisão.",
-    url: "https://www.abconsultoriaestrategica.com.br/solucoes",
+    url: "https://www.abconsultoriaestrategica.com.br/para-quem-atendemos",
     images: ["/og-image.png"],
   },
 };
@@ -37,7 +37,7 @@ const jsonLd = {
       "@type": "ListItem",
       position: 2,
       name: "Para quem atendemos",
-      item: "https://www.abconsultoriaestrategica.com.br/solucoes",
+      item: "https://www.abconsultoriaestrategica.com.br/para-quem-atendemos",
     },
   ],
 };
@@ -72,7 +72,7 @@ export default function Solucoes() {
             {segments.map((s, i) => (
               <ScrollReveal key={s.slug} delay={i * 0.1}>
                 <Link
-                  href={`/solucoes/${s.slug}`}
+                  href={`/para-quem-atendemos/${s.slug}`}
                   className="group block bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow h-full"
                 >
                   <div className={`h-1.5 ${s.accent.bg}`} />

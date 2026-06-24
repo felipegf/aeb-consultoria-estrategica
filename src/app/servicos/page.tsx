@@ -194,7 +194,7 @@ export default function Servicos() {
             <p className="mt-4 text-sm text-sub">
               Prefere ver por perfil?{" "}
               <Link
-                href="/solucoes"
+                href="/para-quem-atendemos"
                 className="text-blue font-semibold hover:underline"
               >
                 Veja para quem atendemos →

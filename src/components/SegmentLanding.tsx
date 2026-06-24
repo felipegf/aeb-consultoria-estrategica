@@ -2,7 +2,7 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import CtaBand from "@/components/CtaBand";
 import MaterialDownload from "@/components/MaterialDownload";
-import type { Segment } from "@/app/solucoes/segments";
+import type { Segment } from "@/app/para-quem-atendemos/segments";
 
 export default function SegmentLanding({ segment }: { segment: Segment }) {
   const { accent } = segment;

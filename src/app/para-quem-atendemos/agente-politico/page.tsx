@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import SegmentLanding from "@/components/SegmentLanding";
 import { getSegment } from "../segments";
 
-const segment = getSegment("empreendedor")!;
+const segment = getSegment("agente-politico")!;
 
-const url = `https://www.abconsultoriaestrategica.com.br/solucoes/${segment.slug}`;
+const url = `https://www.abconsultoriaestrategica.com.br/para-quem-atendemos/${segment.slug}`;
 
 export const metadata: Metadata = {
   title: `Soluções para ${segment.label}`,
@@ -35,13 +35,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 2,
       name: "Para quem atendemos",
-      item: "https://www.abconsultoriaestrategica.com.br/solucoes",
+      item: "https://www.abconsultoriaestrategica.com.br/para-quem-atendemos",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: segment.label,
-      item: `https://www.abconsultoriaestrategica.com.br/solucoes/${segment.slug}`,
+      item: `https://www.abconsultoriaestrategica.com.br/para-quem-atendemos/${segment.slug}`,
     },
   ],
 };
